@@ -75,6 +75,46 @@ public static Node [] loadfile (String filename) throws Exception{
                  lookupKeys[i] = rand.nextInt(32654)+1;
              }
 
+			 for (int i = 0; i < repetitions;i++){
+                 long start = System.nanoTime();
+                 linearSearch(data, lookupKeys[i]);
+                 long end = System.nanoTime();
+                 double time = (end - start)/1000000;
+
+                 linTotal +=time;
+                 linTotalSq +=time*time;
+
+             }
+
+             double linAverage = linTotal/repetitions;
+             double linStandard = Math.sqrt((linTotalSq-repetitions*linAverage*linAverage)/(repetitions-1));
+
+                for (int i = 0; i < repetitions;i++){
+                    long start = System.nanoTime();
+                    binarySearch(data, lookupKeys[i]);
+                    long end = System.nanoTime();
+                    double time = (end - start)/1000000;
+
+                    binTotal +=time;
+                    binTotalSq +=time*time;
+
+                }
+
+                double binAverage = binTotal/repetitions;
+                double binStandard = Math.sqrt((binTotalSq-repetitions*binAverage*binAverage)/(repetitions-1));
+
+			 System.out.println("Results:");
+                System.out.println("linear Search Average:" + fourD.format(linAverage)+"ms");
+                System.out.println("linear Search standard :" + fourD.format(linStandard)+"ms");
+                System.out.println("Binary Search Average:" + fourD.format(binAverage)+"ms");
+                System.out.println("Binary Search standard :" + fourD.format(binStandard)+"ms");
+		 }
+		 
+}
+
+
+
+
 
 
 

@@ -57,7 +57,6 @@ public static Node [] loadfile (String filename) throws Exception{
 
          public static void main(String []args) throws Exception{
              DecimalFormat fourD = new DecimalFormat("0.0000");
-			 DecimalFormat fourD = new DecimalFormat("0.0000");
 
              Node [] data = loadFile("ulysses-1.numbered");
 
@@ -67,6 +66,14 @@ public static Node [] loadfile (String filename) throws Exception{
              Random rand = new Random();
 
              double linTotal = 0;
+			 double linTotalSq = 0;
+             double binTotal = 0;
+             double binTotalSq = 0;
+
+             int [] lookupKeys = new int [repetitions];
+             for (int i = 0; i <repetitions ; i++){
+                 lookupKeys[i] = rand.nextInt(32654)+1;
+             }
 
 
 

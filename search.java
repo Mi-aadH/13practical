@@ -1,6 +1,7 @@
 import java.lang.Math.*;   import java.io.*;   import java.text.*;
 import java.text.DecimalFormat;
 import java.util.*;
+import java.lang.reflect.Array;
 
 public class Prac13{
 
@@ -22,7 +23,24 @@ public static Node [] loadfile (String filename) throws Exception{
 		String line = file.nextLine();
 		String [] parts = line.split("",2);
 
-		int key
+		int key = Integer.parseInt(parts[0]);
+            String data = parts[1];
+            list.add(new Node(key, data));
+	}
+	file.close():
+
+	Node[] arr = new Node[list.size()];
+        return list.toArray(arr);
+    }
+
+    public static int linearSearch(Node[]arr,int key){
+        for (int i = 0; i <arr.length; i++){
+            if (arr[i].key == key)
+                return i;
+            }
+
+        }	
+		
 public static void main(String args[]){
 
 DecimalFormat twoD = new DecimalFormat("0.00");

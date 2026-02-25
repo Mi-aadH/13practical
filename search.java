@@ -15,7 +15,14 @@ public class Prac13{
   } 
 
 public static Node [] loadfile (String filename) throws Exception{
-  Array<
+  Array list = new ArrayList<>();
+	Scanner file = new Scanner(new File(filename));
+
+	while(file.hasNextLine()){
+		String line = file.nextLine();
+		String [] parts = line.split("",2);
+
+		int key
 public static void main(String args[]){
 
 DecimalFormat twoD = new DecimalFormat("0.00");

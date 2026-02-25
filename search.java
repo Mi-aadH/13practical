@@ -1,7 +1,6 @@
-import java.lang.Math.*;   import java.io.*;   import java.text.*;
+import java.io.*;  
 import java.text.DecimalFormat;
 import java.util.*;
-import java.lang.reflect.Array;
 
 public class Prac13{
 
@@ -58,6 +57,16 @@ public static Node [] loadfile (String filename) throws Exception{
 
          public static void main(String []args) throws Exception{
              DecimalFormat fourD = new DecimalFormat("0.0000");
+			 DecimalFormat fourD = new DecimalFormat("0.0000");
+
+             Node [] data = loadFile("ulysses-1.numbered");
+
+             Arrays.sort(data, Comparator.comparingInt(n -> n.key));
+
+             int repetitions = 30;
+             Random rand = new Random();
+
+             double linTotal = 0;
 
 
 
